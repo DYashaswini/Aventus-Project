@@ -1,0 +1,34 @@
+using UnityEngine;
+
+public class MoveImages : MonoBehaviour
+{
+    public float speed = 5f;  // Speed of movement
+    private RectTransform rectTransform;
+
+    void Start()
+    {
+        rectTransform = GetComponent<RectTransform>();
+    }
+
+    void Update()
+    {
+        // Move the image to the left
+        rectTransform.anchoredPosition += Vector2.left * speed * Time.deltaTime;
+    }
+}
+
+using UnityEngine;
+
+public class QuitButton : MonoBehaviour
+{
+    // This function will be called when the quit button is clicked
+    public void QuitGame()
+    {
+        // Quit the application
+        Application.Quit();
+
+        // Log a message to confirm quit functionality works in the editor
+        // Note: Application.Quit() doesn't work in the editor
+        Debug.Log("Quit Button Pressed");
+    }
+}
